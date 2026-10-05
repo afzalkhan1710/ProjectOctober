@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+
+
+
+</head>
+<body>
+<h1>Toggle Traffic Lights</h1> 
+<p>change traffic light status</p>
+<img id="trafficLight" src="Images/Trafficlights-red.png" alt="Traffic Light Red">
+<br><br>
+<button onclick="ToggleLight()">Toggle Light</button> 
+<script>
+    let currentLight = "red";
+
+    function ToggleLight() {
+        const trafficLight = document.getElementById("trafficLight");
+        if (currentLight === "red") {
+            //Immediately change Red to yellow.
+            trafficLight.src = "Images/Trafficlights-yellow.png";
+            currentLight = "yellow";
+            setTimeout(function() {
+                // After 3 seconds, Yellow to green.
+                trafficLight.src = "Images/Trafficlights-green.png";
+                currentLight = "green";
+            }, 3000);
+        } 
+        else if (currentLight === "green") {
+            //Immediately Green to yellow.
+            trafficLight.src = "Images/Trafficlights-yellow.png";
+            currentLight = "yellow";
+            // After 3 seconds, Yellow to red.
+            setTimeout(function() {
+                trafficLight.src = "Images/Trafficlights-red.png";
+                currentLight = "red";
+            }, 3000);
+        }
+    </script>
+    <br><br> <hr>
+    <button><a href="index.html">Back to Home</a></button>
+    <button><a href="bulb.html">Go to Bulb Demo</a></button>
+    <button><a href="invite.html">Go to Invite Demo</a></button>
+</body>
+</html>

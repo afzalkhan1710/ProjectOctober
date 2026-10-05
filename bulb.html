@@ -4,16 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Light Bulb Demo</title>
+    <style>
+         body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        }
+        #card {
+            text-align:center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        #turnOnBtn {
+            background-color: #22c55e;
+            color: white;
+            margin-right: 10px;
+        }
+        #turnOffBtn {
+            background-color: #ef4444;
+            color: white;
+        }
+        h1 {
+            margin-bottom: 20px;
+        white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
+   
     <h1>JavaScript DOM Manipulation</h1>
     <p>Click the button to turn the light bulb on and off.</p>
     <img id="bulb" src="Images/pic_bulboff.gif" alt="Light Bulb">
     <br><br>
     <button onclick="turnOn()">Turn On Bulb</button>
+    <br><br>
     <button onclick="turnOff()">Turn Off Bulb</button>
     <br><br>
-    <a href="index.html">Back to Home</a>
+    <hr>
+    <button><a href="index.html">Back to Home</a></button>
+    <br>
+    <button><a href="trafficlights.html">Go to Traffic Lights Demo</a></button>
+    <br>
+    <button><a href="invite.html">Go to Invite Demo</a></button>
     <script>
         function turnOn() {
             document.getElementById("bulb").src = "Images/pic_bulbon.gif";
