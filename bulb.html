@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb Demo</title>
+</head>
+<body>
+    <h1>JavaScript DOM Manipulation</h1>
+    <p>Click the button to turn the light bulb on and off.</p>
+    <img id="bulb" src="pic_bulboff.gif" alt="Light Bulb">
+    <br><br>
+    <button onclick="turnOn()">Turn On Bulb</button>
+    <button onclick="turnOff()">Turn Off Bulb</button>
+    <br><br>
+    <a href="index.html">Back to Home</a>
+    <script>
+        function turnon() {
+            document.getElementById("bulb").src = "pic_bulbon.gif";
+        }
+        function turnOff() {
+            document.getElementById("bulb").src = "pic_bulboff.gif";
+        }
+    </script>
+</body>
+</html>
