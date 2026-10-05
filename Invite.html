@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Up?</title>
+    <style>
+        body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        }
+        #card {
+            text-align:center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #yeeeaaaaaaaahh {
+            background-color: #22c55e;
+            color: white;
+            margin-right: 10px;
+        }
+        #nahhh {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h1>BGMI tonight? 🎮</h1>
+       <button id="yeeeaaaaaaaahh" onclick="AcceptInvite()">Yes, I'm in! </button>
+       <button id="nahhh">No, I'm out! </button>
+     </div>
+     <script>
+        const nahhhButton = document.getElementById('nahhh');
+        nahhhButton.addEventListener("mouseover", function(){
+            const maxX = window.innerWidth - nahhhButton.offsetWidth;
+            const maxY = window.innerHeight - nahhhButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            nahhhButton.style.position = 'absolute';
+            nahhhButton.style.left = randomX + 'px';
+            nahhhButton.style.top = randomY + 'px';
+        })
+        function AcceptInvite() {
+            document.getElementById('card').innerHTML = "<h1>Great! See you in the game at sharp 19:00! 🎮</h1>";
+        }
+     </script>
+</body>
+</html>
