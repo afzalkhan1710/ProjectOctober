@@ -4,45 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic Lights</title>
-
-
-
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        img{
+            height: 300px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Toggle Traffic Lights</h1> 
-<p>change traffic light status</p>
-<img id="trafficLight" src="Images/Trafficlights-red.png" alt="Traffic Light Red">
-<br><br>
-<button onclick="ToggleLight()">Toggle Light</button> 
-<script>
-    let currentLight = "red";
+    <h1>Traffic Lights Demo</h1>
+    <p><strong>Click the button below to change the status of the traffic light!</strong></p>
 
-    function ToggleLight() {
-        const trafficLight = document.getElementById("trafficLight");
-        if (currentLight === "red") {
-            //Immediately change Red to yellow.
-            trafficLight.src = "Images/Trafficlights-yellow.png";
-            currentLight = "yellow";
-            setTimeout(function() {
-                // After 3 seconds, Yellow to green.
-                trafficLight.src = "Images/Trafficlights-green.png";
-                currentLight = "green";
-            }, 3000);
-        } 
-        else if (currentLight === "green") {
-            //Immediately Green to yellow.
-            trafficLight.src = "Images/Trafficlights-yellow.png";
-            currentLight = "yellow";
-            // After 3 seconds, Yellow to red.
-            setTimeout(function() {
-                trafficLight.src = "Images/Trafficlights-red.png";
-                currentLight = "red";
-            }, 3000);
+    <br><br>
+    <img id="trafficLight" src="Images/Trafficlights-red.png" alt="Traffic Light">
+    <br><br>
+    <button id="toggleButton" onclick="changeStatus()">Change Status</button>
+<script>
+    let currentStatus = "red";
+    // Get references to the traffic light image and the toggle button
+    const trafficLight = document.getElementById("trafficLight");
+    const toggleButton = document.getElementById("toggleButton");
+    // Function to change the status of the traffic light
+function changeStatus() {
+    toggleButton.disabled = true; // Disable the button to prevent multiple clicks
+    if (currentStatus === "red") {
+        //Swap to Yellow
+        trafficLight.src = "Images/Trafficlights-yellow.png";
+        //time fuction to change to green after 3 seconds
+        setTimeout(function() {
+            trafficLight.src = "Images/Trafficlights-green.png";
+            currentStatus = "green";
+            toggleButton.disabled = false; // Re-enable the button after the change
+        }, 3000);
         }
-    </script>
-    <br><br> <hr>
+    else if (currentStatus === "green") {
+        //Swap to Yellow
+        trafficLight.src = "Images/Trafficlights-yellow.png";
+        //time fuction to change to red after 3 seconds
+        setTimeout(function() {
+            trafficLight.src = "Images/Trafficlights-red.png";
+            currentStatus = "red";
+            toggleButton.disabled = false; // Re-enable the button after the change
+        }, 3000);
+    }
+}
+</script>
+    <br><br>
+    <hr>
     <button><a href="index.html">Back to Home</a></button>
+    <br>
     <button><a href="bulb.html">Go to Bulb Demo</a></button>
+    <br>
     <button><a href="invite.html">Go to Invite Demo</a></button>
 </body>
 </html>
